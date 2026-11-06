@@ -1,0 +1,68 @@
+:root {
+  color-scheme: dark;
+
+  /* Tipografi */
+  --font-display: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Warna */
+  --bg: #08080c;
+  --bg-soft: #0b0b12;
+  --surface: #101018;
+  --surface-2: #15151f;
+  --surface-3: #1b1b27;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --text: #edeef6;
+  --text-muted: #9a9bb1;
+  --text-dim: #71728a;
+
+  --neon-cyan: #22d3ee;
+  --neon-violet: #a855f7;
+  --neon-pink: #f472b6;
+  --neon-cyan-soft: rgba(34, 211, 238, 0.14);
+  --neon-violet-soft: rgba(168, 85, 247, 0.14);
+
+  --gradient: linear-gradient(120deg, var(--neon-cyan) 0%, var(--neon-violet) 100%);
+  --gradient-soft: linear-gradient(
+    120deg,
+    rgba(34, 211, 238, 0.16),
+    rgba(168, 85, 247, 0.16)
+  );
+  --gradient-text: linear-gradient(100deg, #7ce9fb 0%, var(--neon-cyan) 35%, var(--neon-violet) 100%);
+
+  /* Radius */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-full: 999px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --section-y: clamp(72px, 9vw, 124px);
+
+  /* Layout */
+  --container: 1140px;
+  --nav-h: 74px;
+
+  /* Efek */
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 24px 60px -28px rgba(0, 0, 0, 0.9);
+  --glow-cyan: 0 0 48px rgba(34, 211, 238, 0.22);
+  --glow-violet: 0 0 56px rgba(168, 85, 247, 0.2);
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition: 220ms var(--ease);
+  --transition-slow: 650ms var(--ease-out);
+}
