@@ -46,7 +46,7 @@ npm run preview  # cek hasil build secara lokal
 Semua teks dan tautan terpusat di **`src/data/portfolio.js`**:
 
 - `profile` — nama, role, lokasi, email, bio, sosial media, statistik, fakta.
-- `skillGroups` — kategori keahlian beserta nilai (0–100).
+- `skillGroups` — kategori keahlian (Frontend, Backend, Database) beserta daftar teknologinya.
 - `projects` — daftar proyek: judul, kategori, deskripsi, stack, tautan demo/repo.
 - `navLinks` — menu navigasi.
 

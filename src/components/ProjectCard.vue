@@ -10,8 +10,23 @@ defineProps({
 
 <template>
   <article v-reveal="Math.min(index * 70, 280)" class="project-card">
-    <div class="project-card__thumb" :style="{ backgroundImage: project.gradient }">
-      <span class="project-card__monogram" aria-hidden="true">
+    <div
+      class="project-card__thumb"
+      :class="{ 'has-image': project.img || project.image }"
+      :style="!(project.img || project.image) ? { backgroundImage: project.gradient } : undefined"
+    >
+      <img
+        v-if="project.img || project.image"
+        class="project-card__image"
+        :src="project.img || project.image"
+        :alt="`Tangkapan layar ${project.title}`"
+        loading="lazy"
+      />
+      <span
+        v-else-if="project.monogram"
+        class="project-card__monogram"
+        aria-hidden="true"
+      >
         {{ project.monogram }}
       </span>
       <span class="project-card__grain" aria-hidden="true"></span>
@@ -85,6 +100,20 @@ defineProps({
   aspect-ratio: 16 / 10;
   overflow: hidden;
   isolation: isolate;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.project-card__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s var(--ease-out);
+}
+
+.project-card:hover .project-card__image {
+  transform: scale(1.05);
 }
 
 .project-card__monogram {

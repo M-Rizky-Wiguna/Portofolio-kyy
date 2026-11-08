@@ -1,38 +1,19 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
 import { skillGroups } from '../data/portfolio'
 import AppIcon from './ui/AppIcon.vue'
 import SectionHeading from './ui/SectionHeading.vue'
-
-const root = ref(null)
-const visible = ref(false)
-let observer
-
-onMounted(() => {
-  observer = new IntersectionObserver(
-    ([entry]) => {
-      if (!entry.isIntersecting) return
-      visible.value = true
-      observer.disconnect()
-    },
-    { threshold: 0.2 },
-  )
-
-  if (root.value) observer.observe(root.value)
-})
-
-onUnmounted(() => observer?.disconnect())
+import TechChip from './ui/TechChip.vue'
 </script>
 
 <template>
-  <section id="skills" ref="root" class="section section--divided skills">
+  <section id="skills" class="section section--divided skills">
     <div class="container">
       <SectionHeading
         centered
         eyebrow="Keahlian"
-        title="Perangkat yang saya"
-        accent="pakai sehari-hari."
-        lead="Kombinasi fondasi frontend yang kuat dan kebiasaan merapikan detail visual — dari struktur komponen sampai mikrointeraksi."
+        title="Dari tampilan sampai"
+        accent="server dan database."
+        lead="Saya nyaman mengerjakan seluruh alur aplikasi — mulai dari antarmuka, logika backend, sampai pengelolaan data."
       />
 
       <div class="skills__grid">
@@ -53,20 +34,8 @@ onUnmounted(() => observer?.disconnect())
           </div>
 
           <ul class="skill-list">
-            <li v-for="(item, index) in group.items" :key="item.name" class="skill">
-              <div class="skill__meta">
-                <span>{{ item.name }}</span>
-                <span class="skill__value">{{ item.level }}%</span>
-              </div>
-              <div class="skill__track" aria-hidden="true">
-                <span
-                  class="skill__fill"
-                  :style="{
-                    width: visible ? `${item.level}%` : '0%',
-                    transitionDelay: `${index * 90 + groupIndex * 120}ms`,
-                  }"
-                ></span>
-              </div>
+            <li v-for="item in group.items" :key="item">
+              <TechChip :label="item" />
             </li>
           </ul>
         </article>
@@ -126,38 +95,9 @@ onUnmounted(() => observer?.disconnect())
 }
 
 .skill-list {
-  display: grid;
-  gap: 16px;
-}
-
-.skill__meta {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 8px;
-  font-size: 0.87rem;
-}
-
-.skill__value {
-  color: var(--text-dim);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-}
-
-.skill__track {
-  height: 6px;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.06);
-  overflow: hidden;
-}
-
-.skill__fill {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: var(--gradient);
-  box-shadow: 0 0 16px -4px rgba(34, 211, 238, 0.8);
-  transition: width 1.1s var(--ease-out);
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
 }
 </style>
