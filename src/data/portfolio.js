@@ -30,7 +30,6 @@ export const profile = {
       icon: "github",
       url: "https://github.com/M-Rizky-Wiguna",
     },
-    { label: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/" },
     {
       label: "Instagram",
       icon: "instagram",
@@ -78,7 +77,7 @@ export const projects = [
     year: "2025",
     featured: true,
     description:
-      "Dengan mengembangkan sistem IoT berbasis ESP32, proyek ini memungkinkan pemberian pakan ikan lele secara otomatis. Dilengkapi dengan servo yang dapat menggerakan penahan pangan dan kontrol jarak jauh melalui aplikasi web.",
+      "Dengan mengembangkan sistem IoT berbasis ESP32, proyek ini memungkinkan pemberian pakan ikan lele secara otomatis. Dilengkapi dengan servo yang dapat menggerakan penahan pangan dan kontrol jarak jauh melalui aplikasi web yaitu Blynk.",
     stack: ["Arduino Ide", "C++", "esp8266",],
     gradient: "linear-gradient(135deg, #0e7490 0%, #22d3ee 48%, #a855f7 100%)",
     img: "/Lele.png",
@@ -93,7 +92,7 @@ export const projects = [
       "Sebuah toko online sederhana yang menampilkan katalog produk, keranjang belanja, dan proses checkout. Dibangun dengan Vue 3 dan Vite, Dipadukan dengan framework Tailwind.",
     stack: ["Vue 3", "Vite", "Tailwind CSS"],
     gradient: "linear-gradient(135deg, #78350f 0%, #f59e0b 55%, #f472b6 100%)",
-    img: "O",
+    img: "/onlineshop.png",
     demo: "https://m-rizky-wiguna-onlineshop.vercel.app/",
     repo: "https://github.com/M-Rizky-Wiguna/OnlineShop.git",
   },
